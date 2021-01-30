@@ -30,6 +30,7 @@ public class AutoLog
             ToggleCommand ctc = new ToggleCommand();
             AlternateToggleCommand ctc2 = new AlternateToggleCommand();
             ctc.myEventHandler = myEventHandler;
+            ctc2.myEventHandler = myEventHandler;
             ClientCommandHandler.instance.registerCommand(ctc);
             ClientCommandHandler.instance.registerCommand(ctc2);
         }

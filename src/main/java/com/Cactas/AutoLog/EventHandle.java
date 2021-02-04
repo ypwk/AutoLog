@@ -20,7 +20,7 @@ public class EventHandle {
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public void onEvent(ClientChatReceivedEvent event){
         if(toggled){
-            if(event.message.getUnformattedText().contains("Sending to server")){
+            if(event.message.getUnformattedText().contains("Sending to server") || event.message.getUnformattedText().toLowerCase().contains("inventory")){
                 Minecraft.getMinecraft().shutdown();
             }
         }
@@ -38,7 +38,6 @@ public class EventHandle {
         String warning = "KICKING MODE ACTIVE!";
         int screenY = Minecraft.getMinecraft().displayHeight / 4 - renderer.FONT_HEIGHT / 2;
         int screenX = Minecraft.getMinecraft().displayWidth / 4 - renderer.getStringWidth(warning) / 2;
-        System.out.println("X: " + screenX + ", Y: " + screenY);
         renderer.drawString(warning, screenX , screenY, 0x55FFFF, true);
     }
 }

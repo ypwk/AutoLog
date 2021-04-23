@@ -20,7 +20,7 @@ public class EventHandle {
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public void onEvent(ClientChatReceivedEvent event){
         if(toggled){
-            if(event.message.getUnformattedText().contains("Sending to server") || event.message.getUnformattedText().toLowerCase().contains("inventory") || event.message.getUnformattedText().toLowerCase().contains("exception")){
+            if(event.message.getUnformattedText().contains("Sending to server") || event.message.getUnformattedText().toLowerCase().contains("inventory") || event.message.getUnformattedText().toLowerCase().contains("exception") || event.message.getUnformattedText().contains("limbo")){
                 Minecraft.getMinecraft().shutdown();
             }
         }
